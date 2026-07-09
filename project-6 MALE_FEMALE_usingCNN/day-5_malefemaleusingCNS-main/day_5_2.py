@@ -8,7 +8,7 @@ from PIL import Image
 # ----------------------------
 st.set_page_config(
     page_title="Male vs Female Classifier",
-    page_icon="🧑‍🤝‍🧑",
+    page_icon="🚹🚺",
     layout="centered"
 )
 
