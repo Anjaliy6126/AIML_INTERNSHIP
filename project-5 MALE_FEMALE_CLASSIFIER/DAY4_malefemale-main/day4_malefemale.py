@@ -16,14 +16,20 @@ st.set_page_config(
 )
 
 # -------------------------
-# Custom CSS
+# Custom CSS (Dark Theme)
 # -------------------------
 st.markdown("""
 <style>
 
 /* Background */
 .stApp{
-    background: linear-gradient(135deg,#fdf2f8,#eff6ff,#f0fdfa);
+    background: linear-gradient(135deg,#0f0c1d,#0d1b2a,#0b1f24);
+    color:#f1f5f9;
+}
+
+/* Make default text light */
+.stApp, .stApp p, .stApp span, .stApp label, .stApp div {
+    color:#f1f5f9;
 }
 
 /* Main Container */
@@ -40,16 +46,17 @@ header {visibility:hidden;}
 
 /* Hero Banner */
 .hero{
-    background: linear-gradient(120deg,#7c3aed,#2563eb 60%,#0891b2);
+    background: linear-gradient(120deg,#5b21b6,#1d4ed8 60%,#0e7490);
     padding:35px 20px;
     border-radius:20px;
     text-align:center;
     color:white;
-    box-shadow:0px 8px 25px rgba(37,99,235,0.35);
+    box-shadow:0px 8px 25px rgba(0,0,0,0.5);
     margin-bottom:25px;
+    border:1px solid #2d3348;
 }
 .hero h1{
-    color:white;
+    color:#ffffff;
     font-size:2.3rem;
     font-weight:800;
     margin-bottom:8px;
@@ -69,30 +76,34 @@ header {visibility:hidden;}
     margin-bottom:12px;
 }
 .section-heading h2{
-    color:#1e3a8a;
+    color:#f1f5f9;
     font-weight:700;
     margin:0;
 }
 .section-line{
     height:4px;
     width:60px;
-    background:linear-gradient(90deg,#2563eb,#06b6d4);
+    background:linear-gradient(90deg,#7c3aed,#06b6d4);
     border-radius:5px;
     margin-bottom:20px;
 }
 
 /* File Uploader */
 [data-testid="stFileUploader"]{
-    background:white;
+    background:#1a1d29;
     border:2px dashed #7c3aed;
     border-radius:15px;
     padding:15px;
+}
+[data-testid="stFileUploader"] section{
+    background:#1a1d29;
+    color:#f1f5f9;
 }
 
 /* Uploaded Image */
 img{
     border-radius:15px;
-    border:3px solid #2563eb;
+    border:3px solid #7c3aed;
 }
 
 /* Success Message */
@@ -102,12 +113,13 @@ img{
 
 /* Cards */
 .card{
-    background:white;
+    background:#1e2130;
     padding:22px;
     border-radius:16px;
     text-align:center;
-    box-shadow:0px 6px 20px rgba(0,0,0,0.12);
+    box-shadow:0px 6px 20px rgba(0,0,0,0.4);
     transition:transform 0.2s ease;
+    border:1px solid #2d3348;
 }
 .card:hover{
     transform:translateY(-4px);
@@ -116,21 +128,21 @@ img{
     border-top:5px solid #ec4899;
 }
 .card-male{
-    border-top:5px solid #2563eb;
+    border-top:5px solid #38bdf8;
 }
 .card h3{
     margin-bottom:5px;
-    color:#334155;
+    color:#cbd5e1;
 }
 .card h1{
     margin:0;
     font-size:2.2rem;
 }
 .card-female h1{
-    color:#db2777;
+    color:#f472b6;
 }
 .card-male h1{
-    color:#1d4ed8;
+    color:#60a5fa;
 }
 
 /* Result Banner */
@@ -142,30 +154,30 @@ img{
     font-weight:800;
     color:white;
     margin-bottom:15px;
-    box-shadow:0px 6px 18px rgba(0,0,0,0.15);
+    box-shadow:0px 6px 18px rgba(0,0,0,0.5);
 }
 .result-female{
-    background:linear-gradient(120deg,#ec4899,#f472b6);
+    background:linear-gradient(120deg,#be185d,#ec4899);
 }
 .result-male{
-    background:linear-gradient(120deg,#2563eb,#0891b2);
+    background:linear-gradient(120deg,#1d4ed8,#0e7490);
 }
 
 /* Repository Box */
 .repo{
-    background:#ffffff;
+    background:#1a1d29;
     border-left:6px solid #7c3aed;
     padding:20px;
     border-radius:14px;
     margin-top:30px;
-    box-shadow:0px 3px 12px rgba(0,0,0,0.1);
+    box-shadow:0px 3px 12px rgba(0,0,0,0.4);
 }
 .repo h3{
-    color:#1e293b;
+    color:#f1f5f9;
     margin-top:0;
 }
 .repo a{
-    color:#2563eb;
+    color:#60a5fa;
     font-weight:600;
     text-decoration:none;
 }
@@ -176,9 +188,13 @@ img{
 /* Footer */
 .footer{
     text-align:center;
-    color:gray;
+    color:#94a3b8;
     font-size:14px;
     margin-top:30px;
+}
+
+hr{
+    border-color:#2d3348 !important;
 }
 
 </style>
@@ -196,8 +212,8 @@ IMG_SIZE = 64
 # -------------------------
 st.markdown("""
 <div class="hero">
-    <h1>🚹🚺 Female vs Male Image Classifier</h1>
-    <p>Upload a photo and let our Machine Learning model predict whether the person is <b>Male</b> or <b>Female</b> — instantly.</p>
+    <h1>🚹🚺 Female vs Male Image Classifier ✨</h1>
+    <p>📸 Upload a photo and let our Machine Learning model predict whether the person is <b>Male</b> or <b>Female</b> — instantly ⚡</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -210,7 +226,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader(
-    "Choose an image (JPG, JPEG, PNG)",
+    "Choose an image (JPG, JPEG, PNG) 🖼️",
     type=["jpg", "jpeg", "png"]
 )
 
@@ -220,7 +236,7 @@ if uploaded_file is not None:
 
     st.image(
         image,
-        caption="Uploaded Image",
+        caption="🖼️ Uploaded Image",
         width=320
     )
 
@@ -237,11 +253,11 @@ if uploaded_file is not None:
     """, unsafe_allow_html=True)
 
     if prediction == 0:
-        st.markdown("""<div class="result-banner result-female">🚺 Prediction: Female</div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="result-banner result-female">🚺 Prediction: Female 💖</div>""", unsafe_allow_html=True)
         st.balloons()
         st.toast("🎉 Prediction Completed: Female", icon="🚺")
     else:
-        st.markdown("""<div class="result-banner result-male">🚹 Prediction: Male</div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="result-banner result-male">🚹 Prediction: Male 💙</div>""", unsafe_allow_html=True)
         st.balloons()
         st.toast("🎉 Prediction Completed: Male", icon="🚹")
 
@@ -280,12 +296,12 @@ st.markdown("""
 
 ### 💻 Project Source Code
 
-Want to explore the implementation, training process, and project files?
+Want to explore the implementation, training process, and project files? 🔧
 
 👉 <b>GitHub Repository:</b><br>
 
 <a href="https://github.com/Anjaliy6126/DAY4_malefemale" target="_blank">
-https://github.com/Anjaliy6126/DAY4_malefemale
+🔗 https://github.com/Anjaliy6126/DAY4_malefemale
 </a>
 
 </div>
@@ -297,7 +313,7 @@ https://github.com/Anjaliy6126/DAY4_malefemale
 st.markdown("""
 <div class="footer">
 <hr>
-Made with ❤️ using <b>Python</b>, <b>Scikit-Learn</b> and <b>Streamlit</b><br>
+Made with ❤️ using <b>Python</b> 🐍, <b>Scikit-Learn</b> 🤖 and <b>Streamlit</b> 🚀<br>
 © 2026 Female vs Male Image Classifier
 </div>
 """, unsafe_allow_html=True)
