@@ -1,3 +1,5 @@
+PROJECT-1 (Dtat visuallization) -> https://datavisuallization-bdmbkpasfwrzqhbxtrk3xj.streamlit.app/
+
 PROJECT-3 (Employee Retention Predictor) -> https://day3hwintern-m2hwnn4qbqz4nf97jjjwzw.streamlit.app/
 
 PROJECT-4 (House Price Prediction) -> https://day2hwintern-m8sucwyngpa2qq5mvhkdk6.streamlit.app/
