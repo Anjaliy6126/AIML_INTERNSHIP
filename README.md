@@ -13,3 +13,5 @@ PROJECT-7 ( Male and Female Eye Detection) -> https://malefemaleeyes-y892qdl85mb
 PROJECT-8 (K-Means Clustering on Iris Flowers) -> https://kmeans-kzcq9qn46dvsnek6yk9ph9.streamlit.app/
 
 PROJECT-9 (COVID-19 Detection) -> https://day6intern-n9jqekqf9z9qdvczvunsn9.streamlit.app/
+
+PROJECT-10 (cat/dog prediction) -> https://duhwpa6xr3j334qr7arrub.streamlit.app/
