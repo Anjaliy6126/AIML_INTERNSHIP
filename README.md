@@ -17,3 +17,5 @@ PROJECT-9 (COVID-19 Detection) -> https://day6intern-n9jqekqf9z9qdvczvunsn9.stre
 PROJECT-10 (cat/dog prediction) -> https://duhwpa6xr3j334qr7arrub.streamlit.app/
 
 PROJECT-11 (Chatbot) -> https://day-7chatbot2-87prxcuoa4yu6truxknagc.streamlit.app/
+
+PROJECT-12 (Analyzing Netflix movie KGF 2 review with LLMs) -> https://qg8bfb55zan7mokgs8l6i3.streamlit.app/
